@@ -9,6 +9,8 @@ public class MainApplication {
 
     public static void main(String[] args) {
 
+        System.out.println("\nRunnig Application \n============================== \n1st Run \n");
+
         WeatherObservable weatherObservable = WeatherObservable.create();
 
         Weather weather = Weather.create(25, 17, 80);
@@ -18,6 +20,8 @@ public class MainApplication {
         new DesktopObserver(weatherObservable);
 
         weatherObservable.notifyObservers();
+
+        System.out.println("\nRunnig weather update \n");
 
         Weather weatherUpdated = Weather.create(30, 6, 90);
         weatherObservable.setWeather(weatherUpdated);
